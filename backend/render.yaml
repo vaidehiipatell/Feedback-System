@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: feedback-backend
+    env: node
+    plan: free
+    buildCommand: "npm install"
+    startCommand: "npm start"
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        sync: false
+      - key: MONGO_DB
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
